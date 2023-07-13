@@ -9,10 +9,12 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <h1>Job Skills Analyzer</h1>
+    <div style={{ marginTop: '2rem', padding: '2rem' }}>
+      <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '2.5rem', marginBottom: '2rem' }}>
+        Job Skills Analyzer
+      </h1>
       <p>Welcome to the Job Skills Analyzer. Select a profession to get started.</p>
-      <select onChange={handleSelect}>
+      <select onChange={handleSelect} style={{ marginTop: '1rem' }}>
         <option value="">Select a profession</option>
         <option value="machineLearningEngineer">Machine Learning Engineer</option>
         <option value="dataScientist">Data Scientist</option>
