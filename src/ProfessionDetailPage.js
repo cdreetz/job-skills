@@ -27,12 +27,16 @@ function ProfessionDetailPage() {
   }
 
   return (
-    <div>
-      <h1>Profession: {professionData.name}</h1>
+    <div style={{ marginTop: '2rem', padding: '2rem' }}>
+      <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '2.5rem', marginBottom: '2rem' }}>
+        Profession: {professionData.name}
+      </h1>
       <h2>Skills:</h2>
       <ul>
         {Object.entries(professionData.skills).map(([skill, percentage]) => (
-          <li key={skill}>{skill}: {percentage}</li>
+          <li key={skill}>
+            {skill}: {percentage}
+          </li>
         ))}
       </ul>
     </div>

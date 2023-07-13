@@ -1,25 +1,29 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Container, Form, Button } from 'react-bootstrap';
+import { professions } from './data/professions'; // replace with the correct path
 
 function HomePage() {
-  const navigate = useNavigate();
-
-  const handleSelect = (event) => {
-    navigate(`/profession/${event.target.value}`);
-  };
-
   return (
-    <div style={{ marginTop: '2rem', padding: '2rem' }}>
-      <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '2.5rem', marginBottom: '2rem' }}>
-        Job Skills Analyzer
-      </h1>
-      <p>Welcome to the Job Skills Analyzer. Select a profession to get started.</p>
-      <select onChange={handleSelect} style={{ marginTop: '1rem' }}>
-        <option value="">Select a profession</option>
-        <option value="machineLearningEngineer">Machine Learning Engineer</option>
-        <option value="dataScientist">Data Scientist</option>
-        {/* Add more options as needed */}
-      </select>
+    <div>
+      <Container className="p-5 mb-4 bg-light rounded-3">
+        <h1>Welcome to the Job Skills Analyzer!</h1>
+        <p>
+          Select a profession to get started.
+        </p>
+      </Container>
+      <Form>
+        <Form.Group controlId="professionSelect">
+          <Form.Label>Select Profession</Form.Label>
+          <Form.Control as="select">
+            {professions.map(profession => (
+              <option key={profession} value={profession}>{profession}</option>
+            ))}
+          </Form.Control>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Analyze
+        </Button>
+      </Form>
     </div>
   );
 }

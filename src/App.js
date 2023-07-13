@@ -6,10 +6,12 @@ import ProfessionDetailPage from './ProfessionDetailPage';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/profession/:id" element={<ProfessionDetailPage />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/profession/:id" element={<ProfessionDetailPage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
